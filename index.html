@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Event Scheduler</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Creative Event Scheduler</h1>
+</header>
+
+<main>
+    <div class="nav-buttons">
+        <button class="add-btn" onclick="showPanel('addPanel')">Add Event</button>
+        <button class="modify-btn" onclick="showPanel('modifyPanel')">Modify Event</button>
+        <button class="delete-btn" onclick="showPanel('deletePanel')">Delete Event</button>
+        <button class="search-btn" onclick="showPanel('searchPanel')">Search Event</button>
+        <button class="display-btn" onclick="showPanel('displayPanel')">Display Events</button>
+    </div>
+
+   
+    <div class="panel" id="addPanel">
+        <h2>Add Event</h2>
+        <div class="form-group">
+            <label>Event ID:</label>
+            <input type="number" id="addID">
+        </div>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" id="addName">
+        </div>
+        <div class="form-group">
+            <label>Location:</label>
+            <input type="text" id="addLocation">
+        </div>
+        <div class="form-group">
+            <label>Date (DD-MM-YYYY):</label>
+            <input type="text" id="addDate" placeholder="DD-MM-YYYY">
+        </div>
+        <div class="form-group">
+            <label>Seats:</label>
+            <input type="number" id="addSeats">
+        </div>
+        <button onclick="insertEvent()">Add Event</button>
+    </div>
+
+    
+    <div class="panel" id="modifyPanel">
+        <h2>Modify Event</h2>
+        <div class="form-group">
+            <label>Event ID to modify:</label>
+            <input type="number" id="modifyID">
+        </div>
+        <div class="form-group">
+            <label>New Name:</label>
+            <input type="text" id="modifyName">
+        </div>
+        <div class="form-group">
+            <label>New Location:</label>
+            <input type="text" id="modifyLocation">
+        </div>
+        <div class="form-group">
+            <label>New Date:</label>
+            <input type="text" id="modifyDate" placeholder="DD-MM-YYYY">
+        </div>
+        <div class="form-group">
+            <label>New Seats:</label>
+            <input type="number" id="modifySeats">
+        </div>
+        <button onclick="modifyEvent()">Modify Event</button>
+    </div>
+
+    <div class="panel" id="deletePanel">
+        <h2>Delete Event</h2>
+        <div class="form-group">
+            <label>Event ID:</label>
+            <input type="number" id="deleteID">
+        </div>
+        <button onclick="deleteEvent()">Delete Event</button>
+    </div>
+
+    <div class="panel" id="searchPanel">
+        <h2>Search Event</h2>
+        <div class="form-group">
+            <label>Event ID:</label>
+            <input type="number" id="searchID">
+        </div>
+        <button onclick="searchEvent()">Search Event</button>
+    </div>
+
+ 
+    <div class="panel" id="displayPanel">
+        <h2>Display Events</h2>
+        <button onclick="displayEvents(true)">Chronological Order</button>
+        <button onclick="displayEvents(false)">Reverse Order</button>
+    </div>
+
+    <div id="eventTable"></div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
